@@ -14,27 +14,22 @@ ILoSA已被证明在不同的挑战性任务中是有效的，例如推箱子、
 To install:
 - Create a workspace containing a src directory.
 - Inside the src directory, clone the franka_ros repository by frankaemika.
-```git clone https://github.com/frankaemika/franka_ros ```
-- Inside the repository, clone the human friendly controllers of TU Delft https:```//github.com/franzesegiovanni/franka_human_friendly_controllers```
-- Return to the workspace main directory (cd ../..).
-- Source your version of ROS (e.g. ```source /opt/ros/melodic/setup.bash```).
-- Build the project, calling: ```catkin_make -DMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=/path/to/libfranka/build``` (be sure that libfranka is installed https://frankaemika.github.io/docs/installation_linux.html)
+```创建一个包含 src 目录的工作区。
+在 src 目录中，克隆 Frankaemika 的 Franka_ros 存储库。 git clone https://github.com/frankaemika/franka_ros 
+在存储库中，克隆 TU Delft 的人性化控制器 https：//github.com/franzesegiovanni/franka_human_friendly_controllers
+返回工作区主目录（cd ../..）。
+构建项目，调用：（执行catkin_make -DMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=~/libfranka/build确保安装了 libfranka https://frankaemika.github.io/docs/installation_linux.html） 
+，第一次运行它时，请使用 来设置 Gazebo python3 setup_gazebo.py。在franka_human_friendly_controllers内执行```
+再次编译：  catkin_make -DMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=~/libfranka/build```
+
 To run ILoSA_gazebo:
-- Switch on your Panda robot (make sure the gripper is initialized correctly), unlock its joints, and activate the FCI if necessary.
-- Open a terminal and be sure that the ros of the new catkin workspace is sourced, i.e. ```source devel/setup.bash```
-- 第一次运行它时，请使用 来设置 Gazebo 在文件夹ILosa/src/franka_human_friendly_controllers里执行python3 setup_gazebo.py。
-再次编译：  catkin_make -DMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=~/libfranka/build.
 
 在仿真中使用笛卡尔阻抗控制器：
-
+source devel/setup.bash
 roslaunch franka_gazebo panda.launch x:=-0.5 world:=$(rospack find franka_gazebo)/world/stone.sdf controller:=cartesian_variable_impedance_controller rviz:=true
-
-要杀死凉亭，请运行： killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient
+如果要kill gazebo，请运行： killall -9 gazebo & killall -9 gzserver  & killall -9 gzclient
 - ```在ILosa-main运行```
 - ``` python3 main.py```
 
-
-
-```
 
   
