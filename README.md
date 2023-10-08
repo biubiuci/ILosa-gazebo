@@ -9,17 +9,17 @@ ILoSA是一个使机器人能够学习可变阻抗策略的框架，其中笛卡
 2.纠正阶段-在该阶段，人员可以对最初演示的策略进行局部调整，以提高任务执行期间的性能。
 ILoSA已被证明在不同的挑战性任务中是有效的，例如推箱子、擦木板，以及从插座上插拔插头。只需一次演示，然后进行短时间的纠正，就可以实现良好的任务执行。低时间需求加上直观的校正界面，进一步使ILoSA可供可能不是机器人专家的人使用。以下[视频](https://www.youtube.com/watch?v=MAG-kFGztws）提供了ILoSA功能的概述。
 有了这一点，我们邀请大家自己尝试ILoSA，将其扩展到其他任务中，不仅对机器人，甚至对人类都有挑战，并继续推动机器人学习的能力。
-### Interested also in learning and controlling the end-effector orientation? Then read: 
+
 # How to run the code on a Franka Emika Panda gazebo
 To install:
 - Create a workspace containing a src directory.
 - Inside the src directory, clone the franka_ros repository by frankaemika.
 ```创建一个包含 src 目录的工作区。
-在 src 目录中，克隆 Frankaemika 的 Franka_ros 存储库。 git clone https://github.com/frankaemika/franka_ros 
-在存储库中，克隆 TU Delft 的人性化控制器 https：//github.com/franzesegiovanni/franka_human_friendly_controllers
+在 src 目录中，克隆 Frankaemika 的 Franka_ros 存储库。 git clone https://github.com/frankaemika/franka_ros
+在存储库中，克隆 TU Delft 的人性化控制器git clone https://github.com/franzesegiovanni/franka_human_friendly_controllers
 返回工作区主目录（cd ../..）。
-构建项目，调用：（执行catkin_make -DMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=~/libfranka/build确保安装了 libfranka https://frankaemika.github.io/docs/installation_linux.html） 
-，第一次运行它时，请使用 来设置 Gazebo python3 setup_gazebo.py。在franka_human_friendly_controllers内执行```
+构建项目，调用：（执行catkin_make -DMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=~/libfranka/build确保安装了 libfranka ,https://frankaemika.github.io/docs/installation_linux.html） 
+，第一次运行它时，请使用 来设置 Gazebo python3 setup_gazebo.py。在franka_human_friendly_controllers文件内执行```
 再次编译：  catkin_make -DMAKE_BUILD_TYPE=Release -DFranka_DIR:PATH=~/libfranka/build```
 
 To run ILoSA_gazebo:
